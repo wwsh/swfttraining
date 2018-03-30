@@ -15,6 +15,8 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * This mocks the original SwiftSimpleMessage for test purposes.
+ * 1. Emulating original methods using injected test data.
+ * 2. Could be simplified into 1 magic method, unless we want to preserve class type hints.
  *
  * @package App\Tests\Transport
  */
@@ -86,8 +88,6 @@ class SwiftSimpleMessageMock extends SwiftSimpleMessage
     {
         return $this->data['body'];
     }
-
-
 }
 
 class SendGridTransportTest extends TestCase
